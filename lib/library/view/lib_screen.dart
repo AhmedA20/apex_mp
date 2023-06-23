@@ -15,47 +15,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: Icon(Icons.menu_outlined),
-      ),
-      body: Column(
-        children: [Text("Library"), GridLayout(), BottomPlayer()],
       ),
     );
-  }
-}
-
-//------------------------------------------------------------------------------
-class GridLayout extends StatefulWidget {
-  const GridLayout({super.key});
-
-  @override
-  State<GridLayout> createState() => _GridLayoutState();
-}
-
-class _GridLayoutState extends State<GridLayout> {
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 20, mainAxisSpacing: 20),
-        itemCount: lst.length,
-        itemBuilder: (BuildContext ctx, index) {
-          return TileItem(lst[index]);
-        });
-  }
-}
-
-//------------------------------------------------------------------------------
-class BottomPlayer extends StatefulWidget {
-  const BottomPlayer({super.key});
-
-  @override
-  State<BottomPlayer> createState() => _BottomPlayerState();
-}
-
-class _BottomPlayerState extends State<BottomPlayer> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
